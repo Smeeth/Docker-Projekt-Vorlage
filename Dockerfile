@@ -1,7 +1,12 @@
-FROM debian:bullseye-slim
+# Verwende das Alpine-Basis-Image
+FROM alpine:latest
 
-RUN apt-get update && apt-get install -y \
-    curl \
-    && rm -rf /var/lib/apt/lists/*
+# Installiere bash und curl (mit Versionen und ohne empfohlene Pakete)
+RUN apk update && \
+    apk add --no-cache bash curl
 
+# Stelle sicher, dass der Container schlank bleibt
+RUN rm -rf /var/cache/apk/*
+
+# Setze den Standardbefehl (optional)
 CMD ["bash"]
