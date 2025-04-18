@@ -1,0 +1,12 @@
+# Node/Build/Caches
+node_modules/
+dist/
+*.log
+
+# Docker
+*.env
+docker-compose.override.yml
+
+# VSCode oder andere Editor-Dateien
+.vscode/
+.idea/

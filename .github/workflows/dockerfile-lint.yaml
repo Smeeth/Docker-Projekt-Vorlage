@@ -1,0 +1,22 @@
+name: Dockerfile Lint
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository klonen
+        uses: actions/checkout@v3
+
+      - name: Hadolint installieren
+        run: |
+          sudo wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/latest/download/hadolint-Linux-x86_64
+          sudo chmod +x /bin/hadolint
+
+      - name: Dockerfile mit Hadolint prüfen
+        run: hadolint Dockerfile
