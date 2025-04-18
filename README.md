@@ -1,15 +1,27 @@
-# 🚀 Docker-Projekt-Template
+# 🐳 Docker-Projektvorlage
 
-Dies ist ein GitHub-Template-Repository für Docker-Projekte mit:
+Ein GitHub-Template-Repository zur schnellen Erstellung von Docker-Projekten.
 
-- Dockerfile und Compose Setup
+## 🔧 Inhalt
+
+- `Dockerfile` & `docker-compose.yaml`
 - `.env.example` zur Konfiguration
-- GitHub Actions für Linting und Build-Prüfung
+- `.gitignore` & `.dockerignore`
+- Automatisiertes Linting (Hadolint)
+- Build-Prüfung bei Pull Requests
+- Automatische Changelog-Erstellung bei neuen Versionstags
 
-## 🔧 Verwendung
+## 🚀 Nutzung
 
-1. Repository als Template verwenden: **"Use this template"**
-2. `.env.example` kopieren zu `.env` und anpassen
-3. Container starten:
+1. Dieses Repository als Template verwenden
+2. `.env.example` kopieren zu `.env`
+3. Lokale Entwicklung:
    ```bash
    docker compose up --build
+   ```
+
+## 🧪 Automatisierung
+
+- **Push auf `main`** → Dockerfile-Linting
+- **Pull Request auf `main`** → Build-Test
+- **Push eines Tags `vX.Y.Z`** → Changelog wird automatisch aktualisiert

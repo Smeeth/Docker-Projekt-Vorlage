@@ -3,7 +3,7 @@ version: '3.8'
 services:
   app:
     build: .
-    container_name: my_app_container
+    container_name: template_app
     volumes:
       - .:/app
     working_dir: /app
