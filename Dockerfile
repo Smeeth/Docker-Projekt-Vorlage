@@ -1,10 +1,12 @@
-# Verwenden von Alpine als Basisimage
+# Verwende das Alpine-Basis-Image
 FROM alpine:latest
 
-# Installieren von essentiellen Paketen
+# Installiere bash und curl (mit Versionen und ohne empfohlene Pakete)
 RUN apk update && \
-    apk add --no-cache bash curl nano && \
-    rm -rf /var/cache/apk/*
+    apk add --no-cache bash curl
 
-# Standardkommando (optional)
+# Stelle sicher, dass der Container schlank bleibt
+RUN rm -rf /var/cache/apk/*
+
+# Setze den Standardbefehl (optional)
 CMD ["bash"]
