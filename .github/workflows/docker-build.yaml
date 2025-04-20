@@ -10,7 +10,11 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        architecture: [amd64, arm64]
+
+    runs-on: ${{ matrix.architecture == 'amd64' && 'ubuntu-latest' || 'self-hosted' }}
 
     steps:
       - uses: actions/checkout@master
