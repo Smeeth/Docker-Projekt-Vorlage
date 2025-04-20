@@ -25,4 +25,3 @@ jobs:
         run: |
           echo "${{ steps.changelog.outputs.changelog }}" >> $GITHUB_STEP_SUMMARY
           echo "Changelog wurde generiert und in den Pull Request kommentiert."
-          
