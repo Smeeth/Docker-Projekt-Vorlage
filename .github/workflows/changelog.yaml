@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Repository auschecken
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0  # Wichtig: Holen des gesamten Commit-Verlaufs
 
