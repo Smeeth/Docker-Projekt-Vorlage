@@ -1,6 +1,6 @@
 # Das ist nur ein Code-Beispiel für ein Dockerfile
 # Verwende ein leichtgewichtiges Basis-Image
-FROM alpine:3.23.3
+FROM alpine:3.24.1
 
 # Installiere bash und curl mit festgelegten Versionen
 RUN apk update && \
